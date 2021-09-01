@@ -118,6 +118,13 @@
   }
 }
 
+.page-header__nav-menu--nojs {
+  position: static;
+  display: flex;
+  width: 100%;
+  background-color: $light-grayish;
+}
+
 .page-header__button {
   cursor: pointer;
   display: none;
@@ -125,6 +132,10 @@
   @media (max-width: $tablet-width) {
     display: block;
     position: relative;
+
+    &--nojs {
+      display: none;
+    }
 
     &--burger {
       width: 72px;

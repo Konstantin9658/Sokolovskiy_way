@@ -12,7 +12,7 @@
   @media (max-width: $mobile-width) {
     background: url("../img/announcement-background-mobile.jpg") no-repeat;
     min-height: 235px;
-    // background-size: cover;
+    background-size: contain;
   }
 }
 
@@ -94,6 +94,7 @@
   @media (max-width: $mobile-width) {
     color: $dark-grayish-blue;
     padding-bottom: 20px;
+    margin-top: calc(100vw - 320px);
 
     &--shift-tablet {
       display: none;

@@ -25,6 +25,9 @@ let tourDescMacedonia = mainPage.querySelector('.macedonia');
 let tourDescMontenegro = mainPage.querySelector('.montenegro');
 let tourDescCroatia = mainPage.querySelector('.croatia');
 
+navMenu.classList.remove('page-header__nav-menu--nojs');
+btnHeader.classList.remove('page-header__button--nojs');
+
 const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
 btnHeader.addEventListener('click', () => {
