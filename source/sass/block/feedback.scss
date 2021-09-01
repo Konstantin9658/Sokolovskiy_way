@@ -1,0 +1,152 @@
+.feedback {
+  background: url("../img/form-background.jpg") no-repeat 0 0;
+  min-height: 455px;
+
+  @media (min-width: $desktop-width) and (max-width: 1200px) {
+    margin-top: 50px;
+  }
+
+  @media (min-width: 1200px) {
+   padding: 70px 0;
+  }
+
+  @media (max-width: 1200px) {
+    background: url("../img/form-background-tablet.jpg") no-repeat 0 0;
+    background-size: cover;
+    padding: 69px 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    background: $light-grayish;
+    padding: 0;
+    min-height: 441px;
+  }
+}
+
+.feedback__form {
+  width: 656px;
+  min-height: 315px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: $white-main;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  margin-left: auto;
+  box-shadow: 0px 4px 30px rgba(41, 54, 66, 0.1);
+
+  @media (max-width: 1200px) {
+    width: 658px;
+    min-height: 311px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: $mobile-width) {
+    background-color: transparent;
+    box-shadow: none;
+    width: 100%;
+    padding: 0 16px;
+    min-height: 441px;
+    text-align: center;
+  }
+}
+
+.feedback__from-title {
+  @include fontvalue(25px, 32px, 600, normal);
+  color: $mostly-black;
+  margin: 0;
+  padding-bottom: 15px;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 50px;
+    padding-bottom: 20px;
+  }
+}
+
+.feedback__from-subtitle {
+  @include fontvalue(16px, 24px, 400, normal);
+  color: $mostly-black;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.feedback__form-input {
+  display: flex;
+  position: relative;
+
+  label {
+    @include fontvalue(14px, 17px, 400, normal);
+    color: $mostly-black;
+    position: absolute;
+  }
+
+  input {
+    width: 269px;
+    min-height: 50px;
+    border: 1px solid rgba($dark-grayish-blue, 0.3);
+    padding-bottom: 5px;
+
+    &::placeholder {
+      @include fontvalue(14px, 17px, 400, normal);
+      color: $mostly-black;
+    }
+
+    &:not(:last-child) {
+      margin-right: 19px;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
+    width: 100%;
+
+    input {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.feedback__form-input-tel {
+  padding-left: 51px;
+}
+
+.feedback__form-input-email {
+  padding-left: 60px;
+}
+
+.feedback__form-label-tel {
+  left: 26px;
+  top: calc(50% - 19px/2 + 0.5px);
+
+  @media (max-width: $mobile-width) {
+    top: 15px;
+  }
+}
+
+.feedback__form-label-email {
+  top: calc(50% - 19px/2 + 0.5px);
+  left: 303px;
+
+  @media (max-width: $mobile-width) {
+    left: 26px;
+    top: 86px;
+  }
+}
+
+.feedback__form-btn {
+  width: 176px;
+  min-height: 50px;
+  border: none;
+  margin-top: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 50px;
+  }
+}

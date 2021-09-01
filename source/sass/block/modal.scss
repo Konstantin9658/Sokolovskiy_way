@@ -1,0 +1,155 @@
+.modal {
+  display: none;
+
+  & p {
+    @include fontvalue(25px, 43px, 500, normal);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+
+  &--show {
+    display: flex;
+    width: 728px;
+    height: 444px;
+
+    background-color: $light-grayish;
+    animation: bounce .6s;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    bottom: 50%;
+    left: 0;
+    margin: auto;
+    z-index: 50;
+
+    @media (max-width: $mobile-width) {
+      width: 320px;
+      height: 400px;
+    }
+  }
+
+  &--error {
+    animation: shake .6s;
+  }
+}
+
+.modal__img {
+  background: url("../img/modal-img.jpg") no-repeat;
+  width: 338px;
+  height: 444px;
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.modal__wrapper {
+  width: 390px;
+  height: 444px;
+  padding: 72px 60px 0;
+
+  @media (max-width: $mobile-width) {
+    padding: 50px 16px 0;
+  }
+}
+
+.modal__form-title {
+  @include fontvalue(25px, 43px, 600, normal);
+  color: $grayish-blue;
+  margin: 0;
+  padding-bottom: 50px;
+}
+
+.modal__button {
+  width: 176px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.modal__input {
+  position: relative;
+
+  & input {
+    width: 270px;
+    height: 50px;
+    border: 1px solid #d7d9df;
+    margin-bottom: 20px;
+
+    @media (max-width: $mobile-width) {
+      width: 100%;
+    }
+
+    &::placeholder {
+      @include fontvalue(14px, 17px, 400, normal);
+      color: $grayish-blue;
+    }
+  }
+
+  & label {
+    @include fontvalue(14px, 17px, 400, normal);
+    color: $grayish-blue;
+    position: absolute;
+  }
+}
+
+.modal__input-tel {
+  padding-left: 51px;
+}
+
+.modal__input-email {
+  padding-left: 75px;
+}
+
+.modal__input-label-tel {
+  top: 15px;
+  left: 26px;
+}
+
+.modal__input-label-email {
+  top: 85px;
+  left: 26px;
+}
+
+.modal__close {
+  border: none;
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  cursor: pointer;
+
+  & span::after,
+  & span::before {
+    content: "";
+    position: absolute;
+    width: 31px;
+    height: 1px;
+    background-color: rgba($mostly-black, 0.2);
+  }
+
+  & span::before {
+    top: 25px;
+    left: 12.5px;
+    transform: rotate(45deg);
+  }
+
+  & span::after {
+    top: 25px;
+    left: 12.5px;
+    transform: rotate(-45deg);
+  }
+}

@@ -1,0 +1,361 @@
+.price {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet-width) {
+    justify-content: center;
+  }
+}
+
+.price__card {
+  width: 370px;
+  min-height: 672px;
+  border: 1px solid rgba($dark-grayish-blue, 0.3);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  padding: 37px 30px 30px 30px;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0 0 0 4px $soft-red;
+    border: 1px solid transparent;
+
+    & .price__card-title {
+      color: $soft-red;
+    }
+
+    & .price__card-subtitle::after {
+      background-color: rgba($soft-red, 0.5);
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &:last-child {
+    margin-right: 90px;
+
+    @media (min-width: $desktop-width) and (max-width: 1200px) {
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 288px;
+    min-height: 629px;
+    padding: 0;
+
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.price__wrapper {
+  width: 310px;
+  order: 3;
+  margin-top: 115px;
+
+  @media (min-width: $desktop-width) and (max-width: 1200px) {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-top: 108px;
+    width: 100%;
+    order: 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: 148px;
+  }
+}
+
+.price__card-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 229px;
+  margin-bottom: 140px;
+
+  @media (min-width: $desktop-width) and (max-width: 1200px) {
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 0px;
+    margin-top: 100px;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 110px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+}
+
+.price__card-title {
+  @include fontvalue(28px, 38px, 600, normal);
+  color: $mostly-black;
+  margin: 0;
+  padding-bottom: 39px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $tablet-width) {
+    @include fontvalue(24px, 34px, 600, normal);
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 11px;
+    margin-top: 30px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: 15px;
+  }
+
+  span {
+    letter-spacing: -2px;
+
+    @media (max-width: $tablet-width) {
+      letter-spacing: 1px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.price__card-subtitle {
+  @include fontvalue(16px, 24px, 400, normal);
+  color: $dark-grayish-blue;
+  margin: 0;
+  padding-bottom: 28px;
+  position: relative;
+
+  &--shift-desktop,
+  &--shift-tablet {
+    display: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    &--shift-desktop {
+      display: block;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    text-align: center;
+    padding-bottom: 10px;
+
+    &--shift-tablet {
+      display: block;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 310px;
+    height: 1px;
+    background-color: rgba($dark-grayish-blue, 0.3);
+    left: 0;
+    bottom: 0;
+
+    @media (max-width: $tablet-width) {
+      width: 248px;
+      left: 15px;
+    }
+  }
+}
+
+.price__item {
+  @include fontvalue(16px, 32px, 400, normal);
+  color: $dark-grayish-blue;
+  padding-left: 30px;
+  position: relative;
+
+  &--shift-desktop,
+  &--shift-desktop-tablet,
+  &--shift-tablet {
+    display: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    &--shift-desktop,
+    &--shift-desktop-tablet {
+      display: block;
+    }
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 15px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-left: 50px;
+
+    &--shift-desktop-tablet,
+    &--shift-tablet {
+      display: block;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 10px;
+    }
+  }
+
+  &::before {
+    content: url("../img/icon-price-list.svg");
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 0;
+    top: 5px;
+
+    @media (max-width: $tablet-width) {
+      left: 20px;
+    }
+  }
+}
+
+.price__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+
+  &--complex .price__item {
+    padding-bottom: 11px;
+
+    @media (max-width: $tablet-width) {
+      padding-bottom: 9px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-top: 20px;
+  }
+}
+.price__btn {
+  width: 310px;
+  height: 75px;
+  @include flexcenter(flex, center);
+  margin-top: auto;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 0;
+    width: 100%;
+    height: 50px;
+  }
+}
+
+.price__title {
+  @include fontvalue(55px, 90px, 600, normal);
+  color: $dark-grayish-blue;
+  padding-bottom: 17px;
+  position: relative;
+  margin: 0;
+
+  @media (max-width: $tablet-width) {
+    @include fontvalue(30px, 45px, 600, normal);
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  &::before {
+    @media (min-width: $desktop-width) {
+      content: "";
+      position: absolute;
+      width: 175px;
+      height: 3px;
+      background-color: $soft-red;
+      bottom: 0;
+    }
+
+    @media (min-width: $desktop-width) and (max-width: 1200px) {
+      left: 42.7%;
+    }
+
+    @media (min-width: 1200px) {
+      left: 0;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    @include fontvalue(24px, 36px, 600, normal);
+  }
+}
+
+.price__subtitle {
+  @include fontvalue(16px, 27px, 400, normal);
+  color: rgba($dark-grayish-blue, 0.7);
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 60px;
+
+  &--shift-tablet {
+    display: none;
+  }
+
+  @media (max-width: $tablet-width) {
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 30px;
+
+    &--shift-tablet {
+      display: block;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    letter-spacing: -0.1px;
+    padding-bottom: 17px;
+  }
+}
+
+.price__contact {
+  @include fontvalue(22px, 34px, 500, normal);
+  color: $mostly-black;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 13px;
+
+  @media (max-width: $tablet-width) {
+    @include fontvalue(18px, 34px, 500, normal);
+    padding-bottom: 11px;
+  }
+}
+
+.price__telephone {
+  @include fontvalue(20px, 32px, 400, normal);
+  color: $standart-black;
+  display: block;
+  text-align: center;
+
+  @media (max-width: $tablet-width) {
+    @include fontvalue(18px, 32px, 500, normal);
+    text-decoration: underline;
+    color: $soft-red;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $soft-red
+  }
+}

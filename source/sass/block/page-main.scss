@@ -1,0 +1,7 @@
+.page-main {
+  @media (min-width: $desktop-width) {
+    background: url("../img/map-tab-desktop.png") no-repeat 50% 72.3%;
+  }
+
+  overflow: hidden;
+}

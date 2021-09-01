@@ -1,0 +1,26 @@
+.page-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+  min-height: 429px;
+  width: 100%;
+
+  h2 {
+    @include fontvalue(18px, 32px, 600, normal);
+    color: $mostly-black;
+    margin: 0;
+  }
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    padding: 0 21px;
+  }
+
+  @media (max-width: $mobile-width) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    padding: 0 16px;
+  }
+}

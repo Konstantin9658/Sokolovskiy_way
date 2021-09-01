@@ -1,0 +1,24 @@
+.button {
+  @include fontvalue(12px, 14px, 700, normal);
+  background-color: $soft-red;
+  color: $white-main;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  @media (max-width: $tablet-width) {
+    @include fontvalue(10px, 12px, 500, normal);
+    min-height: 50px;
+    width: 250px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 288px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $sofr-orange;
+    transition: all 0.5s ease-in-out;
+  }
+}

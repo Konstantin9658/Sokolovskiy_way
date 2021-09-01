@@ -1,0 +1,252 @@
+.description__list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: max-content;
+  border-bottom: 1px solid rgba($dark-grayish-blue, 0.3);
+
+  @media (max-width: $tablet-width) {
+    margin: 0 21px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin: 0;
+  }
+}
+
+.description__wrapper-list {
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    overflow: auto;
+  }
+}
+
+.description__item {
+  @include fontvalue (20px, 24px, 500, normal);
+  margin-bottom: 15px;
+
+  &:not(:last-child) {
+    margin-right: 95px;
+  }
+}
+
+.description__item-link {
+  color: rgba($dark-grayish-blue, 0.3);
+
+  &--active {
+    color: $soft-red;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: $soft-red;
+  }
+}
+
+.description__card {
+  display: none;
+
+  &--show {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 100px;
+
+    @media (max-width: $tablet-width) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.description__card-title {
+  @include fontvalue (55px, 90px, 600, normal);
+  position: relative;
+  margin: 0;
+  margin-top: 75px;
+  margin-bottom: 31px;
+  padding-bottom: 16px;
+
+  @media (min-width: $desktop-width) {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 175px;
+      height: 3px;
+      background-color: $soft-red;
+      bottom: 0;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    @include fontvalue (30px, 45px, 600, normal);
+    margin-bottom: 0;
+    margin-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include fontvalue (24px, 36px, 600, normal);
+    margin-top: 24px;
+  }
+}
+
+.description__card-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $tablet-width) {
+    align-items: center;
+    padding: 0 18px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 0;
+  }
+}
+
+.description__card-subtitle {
+  @include fontvalue (16px, 28px, 400, normal);
+  color: rgba($dark-grayish-blue, 0.7);
+  margin: 0;
+  padding-bottom: 50px;
+  letter-spacing: -0.4px;
+
+  &--shift-desktop,
+  &--shift-desktop-tablet,
+  &--shift-tablet {
+    display: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    &--shift-desktop,
+    &--shift-desktop-tablet {
+      display: block;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    text-align: center;
+    padding-bottom: 20px;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+.description__card-btn {
+  width: 250px;
+  min-height: 75px;
+  @include flexcenter(flex, center);
+  border: none;
+}
+
+.description__card-img {
+  margin-top: 65px;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: 50px;
+  }
+}
+
+.description__card-feedback {
+  position: relative;
+}
+
+.description__card-feedback-wrapper {
+  position: absolute;
+  top: 178px;
+  right: 0;
+  width: 382px;
+  min-height: 285px;
+  display: flex;
+  padding: 30px 30px 30px;
+  flex-direction: column;
+  background-color: $white-main;
+
+  @media (max-width: $tablet-width) {
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 288px;
+    padding-bottom: 34px;
+    top: 100px;
+  }
+}
+
+.description__card-feedback-title {
+  @include fontvalue(30px, 36px, 500, normal);
+  color: $dark-grayish-blue;
+  margin: 0;
+  position: relative;
+  padding-bottom: 14px;
+
+   &::before {
+    content: "";
+    position: absolute;
+    width: 68px;
+    height: 1px;
+    background-color: $soft-red;
+    left: 0;
+    bottom: 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include fontvalue(20px, 24px, 500, normal);
+    text-align: center;
+
+    &::before {
+      left: 80px;
+    }
+  }
+}
+
+.description__card-feedback-comment {
+  @include fontvalue(14px, 28px, 400, normal);
+  color: rgba($dark-grayish-blue, 0.7);
+  margin: 0;
+  padding: 20px 0 32px;
+  letter-spacing: -0.6px;
+
+  @media (max-width: $mobile-width) {
+    text-align: center;
+    padding-bottom: 16px;
+  }
+}
+
+.description__card-feedback-user {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
+
+    br {
+      display: none
+    }
+  }
+}
+
+.description__card-feedback-user-name {
+  @include fontvalue(16px, 20px, 500, normal);
+  color: $dark-grayish-blue;
+  padding-left: 16px;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 10px;
+    padding-left: 6px;
+    padding-top: 2px;
+    letter-spacing: -0.6px;
+  }
+}

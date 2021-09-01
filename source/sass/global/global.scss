@@ -14,6 +14,81 @@
   overflow: hidden;
 }
 
-body {
-  background-color: black;
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+$montserrat: "Montserrat", "Arial", sans-serif;
+
+// Viewports
+
+$tablet-width: 1023px;
+$desktop-width: 1024px;
+$mobile-width: 767px;
+
+// Colors
+
+$soft-red: #fe7865;
+$white-main: #ffffff;
+$dark-grayish-blue: #2c2e3f;
+$mostly-black: #141517;
+$standart-black: #000000;
+$grayish-blue: #48494d;
+$light-grayish: #fbf8f8;
+$sofr-orange: #f17d4b;
+
+// Mixin
+
+@mixin flexcenter($flex, $center) {
+  display: $flex;
+  align-items: $center;
+  justify-content: $center;
+}
+
+@mixin fontvalue($size, $lh, $weight, $style) {
+  font-family: $montserrat;
+  font-size: $size;
+  line-height: $lh;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+// Animation
+
+@keyframes bounce {
+  0% {
+      transform: translateY(-2000px)
+  }
+
+  70% {
+      transform: translateY(30px)
+  }
+
+  90% {
+      transform: translateY(-10px)
+  }
+
+  to {
+      transform: translateY(0)
+  }
+}
+
+@keyframes shake {
+  0%,to {
+      transform: translateX(0)
+  }
+
+  10%,30%,50%,70%,90% {
+      transform: translateX(-10px)
+  }
+
+  20%,40%,60%,80% {
+      transform: translateX(10px)
+  }
 }
